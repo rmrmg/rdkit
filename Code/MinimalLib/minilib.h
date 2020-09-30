@@ -16,6 +16,7 @@ class JSMol {
   JSMol() : d_mol(nullptr){};
   JSMol(RDKit::RWMol *mol) : d_mol(mol){};
   std::string get_smiles() const;
+  std::string get_smarts() const;
   std::string get_cxsmiles() const;
   std::string get_molblock() const;
   std::string get_v3Kmolblock() const;

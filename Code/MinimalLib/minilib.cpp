@@ -17,6 +17,8 @@
 #include <GraphMol/MolPickler.h>
 #include <GraphMol/SmilesParse/SmilesParse.h>
 #include <GraphMol/SmilesParse/SmilesWrite.h>
+#include <GraphMol/SmilesParse/SmartsWrite.h>
+
 #include <GraphMol/FileParsers/FileParsers.h>
 #include <GraphMol/MolDraw2D/MolDraw2D.h>
 #include <GraphMol/MolDraw2D/MolDraw2DSVG.h>
@@ -170,6 +172,13 @@ std::string JSMol::get_smiles() const {
   if (!d_mol) return "";
   return MolToSmiles(*d_mol);
 }
+
+std::string JSMol::get_smarts() const {
+  if (!d_mol) return "";
+  return MolToSmarts(*d_mol);
+}
+
+
 std::string JSMol::get_cxsmiles() const {
   if (!d_mol) return "";
   return MolToCXSmiles(*d_mol);
